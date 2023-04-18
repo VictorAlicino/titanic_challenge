@@ -1,0 +1,35 @@
+LIMPEZA DE DADOS
+
+-- // -- // -- // --
+First Step:
+    - Removido a coluna PassengerId (não é relevante para o modelo) | ARQUIVOS AFETADOS: train.csv e test.csv
+    - Removido a coluna Name (não é relevante para o modelo) | ARQUIVOS AFETADOS: train.csv e test.csv
+    - Removido a coluna Cabin (mais de 70% de valores faltantes e não é relevante para o modelo) | ARQUIVOS AFETADOS: train.csv e test.csv
+    - Removido a coluna Ticket (não é relevante para o modelo) | ARQUIVOS AFETADOS: train.csv e test.csv
+    - Para atender os requisitos do WEKA foi adicionado a coluna Survived no arquivo test.csv | ARQUIVOS AFETADOS: test.csv
+    - Criado um arquivo ext_train.csv que contem as entradas de treinamento e validação | ARQUIVOS AFETADOS: train.csv e ext_train.csv
+
+-- // -- // -- // --
+Second Step:
+REFORMATAÇÃO:
+    * Conversão de CSV para ARFF
+    - Arquivos train.csv, test.csv e ext_train.csv convertidos de CSV para ARFF
+    - Trocando Survived de "numéric" para categórico (0 e 1) | ARQUIVOS AFETADOS: train.arff e ext_train.arff
+    - Trocando Pclass de "numéric" para categórico (1, 2 e 3) | ARQUIVOS AFETADOS: train.arff, test.arff e ext_train.arff
+
+    * Tratando Valores Faltantes
+    Arquivo: train.arff
+        - Coluna 4 (Age) - 177 valores faltantes (20%)
+    
+    Arquivo: test.arff
+        - Coluna 3 (Age) - 86 valores faltantes (20%)
+        - Coluna 6 (Fare) - 1 valor faltante (0%)
+
+    Arquivo: ext_train.arff
+        - Coluna 4 (Age) - 263 valores faltantes (20%)
+        - Coluna 7 (Fare) - 1 valor faltante (0%)
+        - Coluna 8 (Embarked) - 1 valor faltante (0%)
+        
+// * Tratar Valores Faltantes
+// * Tratar Outliers
+// * Converter valores nominais ordenados para numéricos
