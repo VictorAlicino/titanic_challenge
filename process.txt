@@ -29,7 +29,9 @@ REFORMATAÇÃO:
         - Coluna 4 (Age) - 263 valores faltantes (20%)
         - Coluna 7 (Fare) - 1 valor faltante (0%)
         - Coluna 8 (Embarked) - 1 valor faltante (0%)
-        
-// * Tratar Valores Faltantes
+
+    
+
+
 // * Tratar Outliers
 // * Converter valores nominais ordenados para numéricos
