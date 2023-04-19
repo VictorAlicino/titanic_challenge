@@ -1,0 +1,106 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     train-weka.filters.unsupervised.attribute.ReplaceMissingValues
+Instances:    891
+Attributes:   8
+              Survived
+              Pclass
+              Sex
+              Age
+              SibSp
+              Parch
+              Fare
+              Embarked
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Sex <= 0
+|   Age <= 13
+|   |   SibSp <= 2: 1 (21.0/1.0)
+|   |   SibSp > 2: 0 (16.0/1.0)
+|   Age > 13
+|   |   Pclass <= 1
+|   |   |   SibSp <= 0
+|   |   |   |   Fare <= 26: 0 (10.0)
+|   |   |   |   Fare > 26
+|   |   |   |   |   Fare <= 30.5
+|   |   |   |   |   |   Age <= 53
+|   |   |   |   |   |   |   Embarked = S: 1 (18.0/4.0)
+|   |   |   |   |   |   |   Embarked = C
+|   |   |   |   |   |   |   |   Fare <= 29.7: 0 (7.0/2.0)
+|   |   |   |   |   |   |   |   Fare > 29.7: 1 (2.0)
+|   |   |   |   |   |   |   Embarked = Q: 1 (0.0)
+|   |   |   |   |   |   Age > 53: 0 (8.0/1.0)
+|   |   |   |   |   Fare > 30.5: 0 (42.0/9.0)
+|   |   |   SibSp > 0
+|   |   |   |   Embarked = S: 0 (21.0/8.0)
+|   |   |   |   Embarked = C
+|   |   |   |   |   Fare <= 93.5: 1 (7.0/1.0)
+|   |   |   |   |   Fare > 93.5: 0 (3.0)
+|   |   |   |   Embarked = Q: 0 (1.0)
+|   |   Pclass > 1: 0 (421.0/46.0)
+Sex > 0
+|   Pclass <= 2: 1 (170.0/9.0)
+|   Pclass > 2
+|   |   Fare <= 23.25
+|   |   |   Embarked = S
+|   |   |   |   Parch <= 0: 0 (45.0/20.0)
+|   |   |   |   Parch > 0
+|   |   |   |   |   Parch <= 1
+|   |   |   |   |   |   SibSp <= 2: 1 (10.0/3.0)
+|   |   |   |   |   |   SibSp > 2: 0 (2.0)
+|   |   |   |   |   Parch > 1
+|   |   |   |   |   |   Age <= 28: 1 (4.0)
+|   |   |   |   |   |   Age > 28: 0 (2.0)
+|   |   |   Embarked = C
+|   |   |   |   Fare <= 15.2458
+|   |   |   |   |   Fare <= 13.8625: 1 (6.0)
+|   |   |   |   |   Fare > 13.8625: 0 (10.0/2.0)
+|   |   |   |   Fare > 15.2458: 1 (7.0)
+|   |   |   Embarked = Q
+|   |   |   |   Parch <= 0
+|   |   |   |   |   Fare <= 7.65: 0 (2.0)
+|   |   |   |   |   Fare > 7.65: 1 (27.0/4.0)
+|   |   |   |   Parch > 0: 0 (2.0)
+|   |   Fare > 23.25: 0 (27.0/3.0)
+
+Number of Leaves  : 	27
+
+Size of the tree : 	50
+
+
+Time taken to build model: 0 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         355               84.9282 %
+Incorrectly Classified Instances        63               15.0718 %
+Kappa statistic                          0.6683
+Mean absolute error                      0.2161
+Root mean squared error                  0.3333
+Relative absolute error                 46.1328 %
+Root relative squared error             69.2291 %
+Total Number of Instances              418     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,906    0,250    0,864      0,906    0,884      0,670    0,885     0,911     0
+                 0,750    0,094    0,820      0,750    0,784      0,670    0,885     0,835     1
+Weighted Avg.    0,849    0,193    0,848      0,849    0,848      0,670    0,885     0,883     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 241  25 |   a = 0
+  38 114 |   b = 1
+

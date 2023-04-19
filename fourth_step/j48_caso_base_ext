@@ -1,0 +1,66 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     ext_train
+Instances:    1309
+Attributes:   8
+              Survived
+              Pclass
+              Sex
+              Age
+              SibSp
+              Parch
+              Fare
+              Embarked
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Sex <= 0
+|   Age <= 9
+|   |   Pclass <= 2: 1 (16.68/5.22)
+|   |   Pclass > 2: 0 (38.41/8.59)
+|   Age > 9: 0 (787.91/88.95)
+Sex > 0
+|   Pclass <= 2: 1 (250.0/9.0)
+|   Pclass > 2
+|   |   Fare <= 23.25: 1 (183.0/48.0)
+|   |   Fare > 23.25
+|   |   |   Parch <= 0: 1 (2.0)
+|   |   |   Parch > 0: 0 (31.0/7.0)
+
+Number of Leaves  : 	7
+
+Size of the tree : 	13
+
+
+Time taken to build model: 0.01 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        1129               86.249  %
+Incorrectly Classified Instances       180               13.751  %
+Kappa statistic                          0.7022
+Mean absolute error                      0.2192
+Root mean squared error                  0.3361
+Relative absolute error                 46.6314 %
+Root relative squared error             69.335  %
+Total Number of Instances             1309     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,917    0,227    0,870      0,917    0,892      0,704    0,857     0,850     0
+                 0,773    0,083    0,849      0,773    0,809      0,704    0,857     0,826     1
+Weighted Avg.    0,862    0,173    0,862      0,862    0,861      0,704    0,857     0,841     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 747  68 |   a = 0
+ 112 382 |   b = 1
+

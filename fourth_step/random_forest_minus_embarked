@@ -1,0 +1,53 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     train-weka.filters.unsupervised.attribute.Remove-R8
+Instances:    891
+Attributes:   7
+              Survived
+              Pclass
+              Sex
+              Age
+              SibSp
+              Parch
+              Fare
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 0.27 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0.04 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         357               85.4067 %
+Incorrectly Classified Instances        61               14.5933 %
+Kappa statistic                          0.6851
+Mean absolute error                      0.2008
+Root mean squared error                  0.3168
+Relative absolute error                 42.8621 %
+Root relative squared error             65.8024 %
+Total Number of Instances              418     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,883    0,197    0,887      0,883    0,885      0,685    0,926     0,951     0
+                 0,803    0,117    0,797      0,803    0,800      0,685    0,926     0,901     1
+Weighted Avg.    0,854    0,168    0,854      0,854    0,854      0,685    0,926     0,933     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 235  31 |   a = 0
+  30 122 |   b = 1
+

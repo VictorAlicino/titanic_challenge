@@ -1,0 +1,100 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     train
+Instances:    891
+Attributes:   8
+              Survived
+              Pclass
+              Sex
+              Age
+              SibSp
+              Parch
+              Fare
+              Embarked
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Sex <= 0
+|   Pclass <= 1
+|   |   Fare <= 26: 0 (10.0)
+|   |   Fare > 26
+|   |   |   Age <= 53
+|   |   |   |   Fare <= 27: 1 (12.56/1.78)
+|   |   |   |   Fare > 27
+|   |   |   |   |   Parch <= 1: 0 (67.68/25.12)
+|   |   |   |   |   Parch > 1
+|   |   |   |   |   |   Fare <= 164.8667: 1 (5.0)
+|   |   |   |   |   |   Fare > 164.8667: 0 (2.0)
+|   |   |   Age > 53: 0 (24.76/4.11)
+|   Pclass > 1
+|   |   Age <= 9
+|   |   |   SibSp <= 2
+|   |   |   |   Parch <= 0: 0 (8.1/0.77)
+|   |   |   |   Parch > 0: 1 (16.26/0.09)
+|   |   |   SibSp > 2: 0 (14.43/1.0)
+|   |   Age > 9: 0 (416.22/46.06)
+Sex > 0
+|   Pclass <= 2: 1 (170.0/9.0)
+|   Pclass > 2
+|   |   Fare <= 23.25
+|   |   |   Embarked = S
+|   |   |   |   Parch <= 0: 0 (45.0/20.0)
+|   |   |   |   Parch > 0
+|   |   |   |   |   Parch <= 1
+|   |   |   |   |   |   SibSp <= 2: 1 (10.0/3.0)
+|   |   |   |   |   |   SibSp > 2: 0 (2.0)
+|   |   |   |   |   Parch > 1
+|   |   |   |   |   |   Age <= 28: 1 (4.0)
+|   |   |   |   |   |   Age > 28: 0 (2.0)
+|   |   |   Embarked = C
+|   |   |   |   Fare <= 15.2458
+|   |   |   |   |   Fare <= 13.8625: 1 (6.0)
+|   |   |   |   |   Fare > 13.8625: 0 (10.0/2.0)
+|   |   |   |   Fare > 15.2458: 1 (7.0)
+|   |   |   Embarked = Q
+|   |   |   |   Parch <= 0
+|   |   |   |   |   Fare <= 7.65: 0 (2.0)
+|   |   |   |   |   Fare > 7.65: 1 (27.0/4.0)
+|   |   |   |   Parch > 0: 0 (2.0)
+|   |   Fare > 23.25: 0 (27.0/3.0)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	44
+
+
+Time taken to build model: 0.01 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         365               87.3206 %
+Incorrectly Classified Instances        53               12.6794 %
+Kappa statistic                          0.7169
+Mean absolute error                      0.2045
+Root mean squared error                  0.3164
+Relative absolute error                 43.6685 %
+Root relative squared error             65.7092 %
+Total Number of Instances              418     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,944    0,250    0,869      0,944    0,905      0,722    0,905     0,918     0
+                 0,750    0,056    0,884      0,750    0,811      0,722    0,905     0,856     1
+Weighted Avg.    0,873    0,180    0,874      0,873    0,871      0,722    0,905     0,896     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 251  15 |   a = 0
+  38 114 |   b = 1
+

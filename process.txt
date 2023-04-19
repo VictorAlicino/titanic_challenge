@@ -14,8 +14,6 @@ Second Step:
 REFORMATAÇÃO:
     * Conversão de CSV para ARFF
     - Arquivos train.csv, test.csv e ext_train.csv convertidos de CSV para ARFF
-    - Trocando Survived de "numéric" para categórico (0 e 1) | ARQUIVOS AFETADOS: train.arff e ext_train.arff
-    - Trocando Pclass de "numéric" para categórico (1, 2 e 3) | ARQUIVOS AFETADOS: train.arff, test.arff e ext_train.arff
 
     * Tratando Valores Faltantes
     Arquivo: train.arff
@@ -29,9 +27,36 @@ REFORMATAÇÃO:
         - Coluna 4 (Age) - 263 valores faltantes (20%)
         - Coluna 7 (Fare) - 1 valor faltante (0%)
         - Coluna 8 (Embarked) - 1 valor faltante (0%)
-
     
+Third Step:
+REFORMATAÇÃO:
+    - Convertido Male e Female para 0 e 1 respectivamente
 
+Fourh Step:
+CONSTRUÇÃO DO MODELO:
 
-// * Tratar Outliers
-// * Converter valores nominais ordenados para numéricos
+    Algoritmos escolhido: Árvore de Decisão e Random Forest
+    Por quê? Facilidade de interpretação e boa acurácia, além de ser um algoritmo que não requer muita preparação dos dados.
+
+    Treinamento realizado com train.arff e testado no test.arff (com valores faltantes)
+    J48: ./fouth_step/j48_caso_base
+    RandomForest: ./fouth_step/random_forest_caso_base
+
+    Treinamento realizado com ext_train.arff com cross-validation [10 folds] (com valores faltantes)
+    J48: ./fouth_step/j48_caso_base_ext
+    RandomForest: ./fouth_step/random_forest_caso_base_ext
+
+    Treinamento realizdo com train.arff e testado no test.arff (sem valores faltantes)
+    J48: ./fouth_step/j48_sem_valor_faltante
+    RandomForest: ./fouth_step/random_forest_sem_valor_faltante
+
+    --- // --- // --- // ---
+
+    Removendo a coluna Embarked:
+    J48: ./fouth_step/j48_minus_embarked
+    RandomForest: ./fouth_step/random_forest_minus_embarked
+
+    Deixando apenas Pclass, Sex e Age:
+    J48: ./fouth_step/j48_strict
+    RandomForest: ./fouth_step/random_forest_strict
+
