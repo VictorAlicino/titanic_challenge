@@ -1,0 +1,110 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     train-weka.filters.unsupervised.attribute.Remove-R8
+Instances:    891
+Attributes:   7
+              Survived
+              Pclass
+              Sex
+              Age
+              SibSp
+              Parch
+              Fare
+Test mode:    user supplied test set:  size unknown (reading incrementally)
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+Sex <= 0
+|   Pclass <= 1
+|   |   Fare <= 26: 0 (10.0)
+|   |   Fare > 26
+|   |   |   Age <= 53
+|   |   |   |   Fare <= 27: 1 (12.56/1.78)
+|   |   |   |   Fare > 27
+|   |   |   |   |   Parch <= 1: 0 (67.68/25.12)
+|   |   |   |   |   Parch > 1
+|   |   |   |   |   |   Fare <= 164.8667: 1 (5.0)
+|   |   |   |   |   |   Fare > 164.8667: 0 (2.0)
+|   |   |   Age > 53: 0 (24.76/4.11)
+|   Pclass > 1
+|   |   Age <= 9
+|   |   |   SibSp <= 2
+|   |   |   |   Parch <= 0: 0 (8.1/0.77)
+|   |   |   |   Parch > 0: 1 (16.26/0.09)
+|   |   |   SibSp > 2: 0 (14.43/1.0)
+|   |   Age > 9: 0 (416.22/46.06)
+Sex > 0
+|   Pclass <= 2: 1 (170.0/9.0)
+|   Pclass > 2
+|   |   Fare <= 23.25: 1 (117.0/48.0)
+|   |   Fare > 23.25: 0 (27.0/3.0)
+
+Number of Leaves  : 	13
+
+Size of the tree : 	25
+
+
+Time taken to build model: 0.01 seconds
+
+=== Evaluation on test set ===
+
+Time taken to test model on supplied test set: 0 seconds
+
+=== Summary ===
+
+Correctly Classified Instances         397               94.9761 %
+Incorrectly Classified Instances        21                5.0239 %
+Kappa statistic                          0.8928
+Mean absolute error                      0.2055
+Root mean squared error                  0.2942
+Relative absolute error                 43.8686 %
+Root relative squared error             61.0943 %
+Total Number of Instances              418     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,944    0,039    0,977      0,944    0,960      0,894    0,947     0,978     0
+                 0,961    0,056    0,907      0,961    0,933      0,894    0,947     0,890     1
+Weighted Avg.    0,950    0,046    0,951      0,950    0,950      0,894    0,947     0,946     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 251  15 |   a = 0
+   6 146 |   b = 1
+
+
+=== Re-evaluation on test set ===
+
+User supplied test set
+Relation:     titanic_real
+Instances:     unknown (yet). Reading incrementally
+Attributes:   8
+
+=== Summary ===
+
+Correctly Classified Instances        1780               80.6525 %
+Incorrectly Classified Instances       427               19.3475 %
+Kappa statistic                          0.5215
+Mean absolute error                      0.2771
+Root mean squared error                  0.3842
+Total Number of Instances             2207     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0,924    0,442    0,815      0,924    0,866      0,535    0,795     0,842     0
+                 0,558    0,076    0,778      0,558    0,650      0,535    0,795     0,680     1
+Weighted Avg.    0,807    0,324    0,803      0,807    0,797      0,535    0,795     0,790     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 1383  113 |    a = 0
+  314  397 |    b = 1
+
